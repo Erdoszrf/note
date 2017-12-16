@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<style>
+  .taiji{
+    width:400px;
+    height:400px;
+    border-radius:50%;
+    background: linear-gradient(to bottom, #ffffff 50%,#000000 50%);
+    position: relative;
+    animation-name:spin;
+    animation-duration:2s;
+    animation-iteration-count:infinite;/*无限转*/
+    animation-timing-function: linear;/*匀速转*/
+  }
+  .taiji::before{
+    content:'';
+    background:white;
+    border:75px solid black;
+    position:absolute;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    left:0;
+    top:25%;
+  }
+  .taiji::after{
+    content:'';
+    background:black;
+    border:75px solid white;
+    position:absolute;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    left:50%;
+    top:25%;
+  }
+    @keyframes spin{
+      from{
+        transform:rotate(0deg);
+      }
+      to{
+        transform:rotate(360deg);
+      }
+    }
+</style>
+
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+
+<body>
+  <div class="taiji"></div>
+</body>
+
+</html>
